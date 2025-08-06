@@ -1,0 +1,34 @@
+
+import { registry } from "@web/core/registry";
+
+// In this test we will try to fill the contact us form,
+// submit it and check if we are redirected to the success page.
+
+registry.category("web_tour.tours").add("my_tour", {
+    url: '/contactus',
+    steps: () => [
+        // Steps to fill the form
+        {
+            content: "Fill 'Name' field",
+            trigger: "input[name='name']", // selector to target element
+            run: "edit Hello", // edit action - to type "Hello" in our target element
+        },
+        {
+            content: "Fill 'Email' field",
+            trigger: "input[name='email_from']",
+            run: "edit arib@odoo.com",
+        },
+        {
+            content: "Fill 'Subject' field",
+            trigger: "input[name='subject']",
+            run: "edit Test subject",
+        },
+        {
+            content: "Fill 'Question' field",
+            trigger: "textarea[name='description']",
+            run: "edit My test question",
+        },
+
+        // Let's submit our form
+    ]
+});
