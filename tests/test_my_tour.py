@@ -1,4 +1,4 @@
-from odoo.tests import tagged, HttpCase
+from odoo.tests import HttpCase
 
 class TestForm(HttpCase):
 
@@ -6,4 +6,5 @@ class TestForm(HttpCase):
         self.start_tour(
             "/contactus",
             "my_tour",
+            watch=True
         )

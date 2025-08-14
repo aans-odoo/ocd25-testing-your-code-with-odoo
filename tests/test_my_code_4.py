@@ -12,7 +12,8 @@ class TestWebsiteFormController(TransactionCase):
         
         controller = WebsiteForm()
 
-        # We will send a mock request to this controller to simulate form submission
+        # We will send a mock request to this controller to simulate form
+        # submission
         website = self.env['website'].browse(1)
         mail_model = self.env['ir.model']._get('mail.mail')
         with MockRequest(self.env, website=website):

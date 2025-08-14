@@ -28,5 +28,5 @@ class TestWebsiteFormController(TransactionCase):
 
         # Check if a mail record is created
         mail = self.env['mail.mail'].search([], order='id desc', limit=1) # get last mail record
-        self.assertEqual(mail.subject, 'Test subject')
+        self.assertEqual(mail.subject, 'Test subjectvv')
         self.assertEqual(mail.email_to, 'receiver@example.com')
